@@ -63,4 +63,13 @@ Deve-se criar o repositório no GitHub
 ```js
 git remote add origin [link do repositório GitHub]
 ```
-### 2.3 - Repetir a partir do item: 2 - Adiconar as alterações que serão enviadas
+### 2.3 - Setar o link da branch com o link do repositório
+
+Deve-se criar o repositório no GitHub
+
+```js
+git push --set-upstream origin master
+```
+![image]()
+
+### 2.4 - Repetir a partir do item: 2 - Adiconar as alterações que serão enviadas
