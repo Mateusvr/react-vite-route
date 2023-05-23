@@ -5,12 +5,13 @@ import { Cadastro } from "./pages/Cadastro";
 import { Sobre } from "./pages/Sobre";
 import { Contato } from "./pages/Contato";
 import { Home } from "./pages/Home";
+import { Login } from "./pages/Login";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/Cadastro">Cadastro</Link>
@@ -22,10 +23,11 @@ function App() {
               <Link to="/Contato">Contato</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
