@@ -1,23 +1,35 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
     //1 - Criar o objeto para enviar com os dados usando useState
     const [login, setLogin] = useState({})
 
-    //const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const handleLogin = (event) => {
         event.preventDefault()
-        console.log('submit')
+        console.log('submit', login)
         //navigate('/home')
         //Tentar criar navigate em casa
 
         if(login.email === 'adm@teste' && login.senha === '1234') {
+
             console.log('vai para home')
+            navigate('/home')
         } else{
             alert(`Usuário ou senha inválido.`)
         }
     }
+
+  const handleChange = event => {
+    let key = event.target.id 
+    let value = event.target.value 
+
+    setLogin({...login, [key]: value})
+
+    console.log(key, value);
+  }
 
   return (
     <main className="form-signin w-100 m-auto">
@@ -38,6 +50,7 @@ export const Login = () => {
             id="email"
             placeholder="name@example.com"
             value={login.email || ''}
+            onChange={handleChange}
           />
           <label htmlFor="floatingInput">Email</label>
         </div>
@@ -48,6 +61,8 @@ export const Login = () => {
             id="senha"
             placeholder="Senha"
             value={login.senha || ''}
+            onChange={handleChange}
+
           />
           <label htmlFor="floatingPassword">Senha</label>
         </div>
@@ -72,3 +87,4 @@ export const Login = () => {
 //Criar onChange para conseguir digitar;
 //Simular o login que direciona para a /home conforme o login fake;
 //Criar navigate.
+//react_hook_form
